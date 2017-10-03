@@ -6,7 +6,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="page-home">
-        <h4>Hello world!</h4>
+        <h4>Hello Im' OpsTalent React-Redux starter Kit</h4>
       </div>
     );
   }
