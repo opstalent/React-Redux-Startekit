@@ -1,14 +1,19 @@
 import "babel-polyfill";
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { store } from "./store.js";
-import { router } from "./router.js";
+import store from "./store.js";
+import { Provider } from 'react-redux';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Home from './components/Home';
 
-// render the main component
 ReactDOM.render(
   <Provider store={store}>
-    {router}
-  </Provider>,
-  document.getElementById('app')
-);
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/" component={Home} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Provider>
+    ,document.getElementById('app'));

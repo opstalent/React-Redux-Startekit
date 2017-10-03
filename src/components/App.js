@@ -1,9 +1,7 @@
 import React from "react";
 import "./app.scss";
 
-// app component
-export default class App extends React.Component {
-  // render
+class App extends React.Component {
   render() {
     return (
       <div className="well test">
@@ -12,3 +10,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default App;

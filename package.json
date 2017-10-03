@@ -1,5 +1,5 @@
 {
-  "name": "OpsTalent React-Redux starter",
+  "name": "redux-minimal",
   "version": "0.0.1",
   "description": "Start building complex react-redux apps today, with this minimalist easy to understand starter kit (boilerplate)",
   "keywords": [
@@ -35,7 +35,6 @@
     "react-bootstrap": "^0.30.10",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
-    "react-router": "^3.0.1",
     "react-router-bootstrap": "^0.23.1",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
