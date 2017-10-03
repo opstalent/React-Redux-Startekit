@@ -1,7 +1,7 @@
 import "babel-polyfill";
 import React from "react";
 import ReactDOM from "react-dom";
-import store from "./store.js";
+import store from "./store/store.js";
 import { Provider } from 'react-redux';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
@@ -16,4 +16,4 @@ ReactDOM.render(
       </div>
     </BrowserRouter>
   </Provider>
-    ,document.getElementById('app'));
+  , document.getElementById('app'));

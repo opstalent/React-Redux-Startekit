@@ -1,11 +1,8 @@
-import React from "react";
-import "./app.scss";
-
-class App extends React.Component {
+import React, { Component } from 'react';
+class App extends Component {
   render() {
     return (
       <div className="well test">
-        {this.props.children}
       </div>
     );
   }
