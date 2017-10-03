@@ -1,21 +1,12 @@
 # React Redux minimal starter kit (boilerplate)
 
 
-<br><a href="http://redux-minimal.js.org/"><img src="http://redux-minimal.js.org/logo/redux-minimal-logo-blue.svg"></a><br><br>
-
-
-[![Join the chat at https://gitter.im/catalin-luntraru/redux-minimal](https://badges.gitter.im/catalin-luntraru/redux-minimal.svg)](https://gitter.im/catalin-luntraru/redux-minimal?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/catalin-luntraru/redux-minimal.svg?branch=master)](https://travis-ci.org/catalin-luntraru/redux-minimal?branch=master)
-[![dependencies](https://david-dm.org/catalin-luntraru/redux-minimal.svg)](https://david-dm.org/catalin-luntraru/redux-minimal)
-[![devDependency Status](https://david-dm.org/catalin-luntraru/redux-minimal/dev-status.svg)](https://david-dm.org/catalin-luntraru/redux-minimal?type=dev)
-
-Redux-Minimal is a minimalist react-redux starter kit (boilerplate) which let's you build rich real world apps. 
-It's not as light as some starter kits which only let you write a simple hello world app and then you have to struggle with installing all the other stuff yourself. 
+Redux-Minimal is a minimalist react-redux starter kit (boilerplate) which let's you build rich real world apps.
+It's not as light as some starter kits which only let you write a simple hello world app and then you have to struggle with installing all the other stuff yourself.
 And it's also not as packed as other starter kits which confuse you massively with its folder/file structure and arcane scripts.
 
 Redux-Minimal contains the bare minimum to develop a real world complex app and it also comes with a small users app that will show you how to code certain features.
-A demo of the app can be seen here: [http://redux-minimal-app.catalin-luntraru.com](http://redux-minimal-app.catalin-luntraru.com)
-
+A demo of the app can be seen here:(https://github.com/opstalent/React-Redux-Startekit)
 
 # Getting started
 
@@ -28,23 +19,16 @@ A demo of the app can be seen here: [http://redux-minimal-app.catalin-luntraru.c
 
     ```sh
     cd C:\js\node\apps
-    git clone https://github.com/catalin-luntraru/redux-minimal.git hello-world
+    git clone https://github.com/opstalent/React-Redux-Startekit
     cd hello-world
     npm install
     npm start
     ```
 
-3. Then open your [http://localhost:8080/](http://localhost:8080/) to see the included small users app. 
+3. Then open your [http://localhost:8080/](http://localhost:8080/) to see the included small users app.
 Congratulations! You can now write react redux code.
 
 4. For more productivity you can install Chrome's [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
-
-
-# Video tutorial
-
-I made a video tutorial series, to help people out getting started with react and redux. It covers the basics, like what is react, redux, etc, and also setting up the environment with redux-minimal and guiding you step by step with creating the demo users app. You will also understand why code was written this way, where refactoring was needed, etc.
-
-[Let's learn React and Redux with Javascript's new ES6 syntax, from Beginner to Intermediate to Advanced](https://www.youtube.com/watch?v=d0oUGmSE6IY&list=PLJBrYU54JD2pTblB20OmV7GL6H5J-p2g8)
 
 # Why use this?
 
@@ -102,53 +86,8 @@ Here are the npm packages that redux-minimal installs:
 ||[`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)|Helps the browser to understand the new js syntax|
 ||[`whatwg-fetch`](https://github.com/github/fetch)|Helps the browser to use fetch|
 
-
-# Express branch
-
-You can use the [express branch](https://github.com/catalin-luntraru/redux-minimal/tree/express) if you want to use express instead of webpack-dev-server.
-
-
 # Change host and/or port
 
-If you don't want to use localhost on port 8080, you can change it in `package.json` and `webpack.config.js`.
+If you don't want to use localhost on port 3000, you can change it in `package.json` and `webpack.config.js`.
 
 
-# Sample app
-
-Redux-Minimal also contains a small sample app that let's you manage some users with the following features:
-* a list of users with pagination
-* add a new user
-* edit an existing user
-* delete a user
-
-The sample app provides you with basically most of the things you will need when building a new real-world app.
-
-The demo for the app can be found here: 
-[http://redux-minimal-app.catalin-luntraru.com](http://redux-minimal-app.catalin-luntraru.com)
-
-
-# Build your own app
-
-1. Open `webpack.config.js` and change the `app_root` value from `src_users` to `src`
-
-2. Run `npm start`
-
-3. Congratulations! You now have a blank `Hello world` starting app
-
-
-# Scripts
-
-Besides the `start` script, there are also other scripts
-
-|`npm run <script>`|What it does|
-|------------------|------------|
-|`start`|Starts the app at [http://localhost:8080/](http://localhost:8080/). The bundle js/css files are stored in memory|
-|`test`|Starts the unit testing using all the files found in the `test` folder|
-|`test-watch`| Starts the unit testing and watches for changes to re-run the tests|
-|`build-dev`|Builds the js/css bundle files in the `public` folder. Adds debugging code for development|
-|`build-prod`|Builds the js/css bundle minified files in the `public` folder|
-
-
-# License
-
-This project is licensed under the MIT license, Copyright (c) 2016 Catalin Luntraru.
