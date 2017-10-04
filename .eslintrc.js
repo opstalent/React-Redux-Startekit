@@ -3,7 +3,10 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": ["eslint:recommended", "google"],
+    "extends": [
+      "eslint:recommended",
+      'plugin:react/recommended'
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -12,9 +15,10 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        // "react"
+         "react"
     ],
     "rules": {
+      "react/jsx-uses-vars": [2]
         // "indent": [
         //     "error",
         //     "tab"
