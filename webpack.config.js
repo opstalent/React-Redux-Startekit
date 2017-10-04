@@ -5,7 +5,7 @@ var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  app_root: app_root, // the app root folder, needed by the other webpack configs
+  app_root: app_root, // the app root folder, needed by the other webpack configs <-- this is not fine!
   entry: [
     // http://gaearon.github.io/react-hot-loader/getstarted/
     // 'webpack-dev-server/client?http://localhost:8080',
@@ -27,13 +27,17 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        // https://github.com/jtangelder/sass-loader
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass'],
       },
       {
         test: /\.css$/,
         loaders: ['style', 'css'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
       }
     ],
   },
