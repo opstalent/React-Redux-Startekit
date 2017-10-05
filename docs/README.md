@@ -17,13 +17,12 @@ A demo of the app can be seen here:(https://github.com/opstalent/React-Redux-Sta
 
 2. Once your environment is prepared, open a command prompt (terminal) and type in the following:
 
-    ```sh
-    cd C:\js\node\apps
-    git clone https://github.com/opstalent/React-Redux-Startekit
-    cd hello-world
-    npm install
-    npm start
-    ```
+```sh
+git clone https://github.com/opstalent/React-Redux-Startekit hello-world
+cd hello-world
+npm install
+npm start
+```
 
 3. Then open your [http://localhost:8080/](http://localhost:8080/) to see the included small users app.
 Congratulations! You can now write react redux code.
