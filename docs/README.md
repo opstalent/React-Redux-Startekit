@@ -90,4 +90,7 @@ Here are the npm packages that redux-minimal installs:
 
 If you don't want to use localhost on port 3000, you can change it in `package.json` and `webpack.config.js`.
 
+# Eslint rules:
+  *temporary disabled since we didn't decide what we need, to make our lives easier
+
 
