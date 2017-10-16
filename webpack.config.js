@@ -1,54 +1,57 @@
-// http://webpack.github.io/docs/configuration.html
-// http://webpack.github.io/docs/webpack-dev-server.html
-var app_root = 'src'; // the app root folder: src, src_users, etc
-var path = require('path');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const app_root = './src';
 
 module.exports = {
-  app_root: app_root, // the app root folder, needed by the other webpack configs <-- this is not fine!
   entry: [
-    // http://gaearon.github.io/react-hot-loader/getstarted/
-    // 'webpack-dev-server/client?http://localhost:8080',
-    'webpack-dev-server/client?http://0.0.0.0:8080',
-    'webpack/hot/only-dev-server',
     'babel-polyfill',
-    __dirname + '/' + app_root + '/index.js',
+    './src/index.js',
   ],
   output: {
-    path: __dirname + '/public/js',
-    publicPath: 'js/',
-    filename: 'bundle.js',
+    path: __dirname + '/public',
+    publicPath: '/',
+    filename: 'js/bundle.js',
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
+        use: [
+          { loader: 'babel-loader' },
+          { loader: 'eslint-loader' },
+        ],
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass'],
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        }),
       },
       {
         test: /\.css$/,
-        loaders: ['style', 'css'],
+        use: ExtractTextWebpackPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader'],
+        }),
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader",
-      }
     ],
   },
   devServer: {
-    contentBase: __dirname + '/public',
+    contentBase: './static',
+    inline: true,
   },
   plugins: [
-    new CleanWebpackPlugin(['css/main.css', 'js/bundle.js'], {
-      root: __dirname + '/public',
-      verbose: true,
-      dry: false, // true for simulation
+    new CleanWebpackPlugin(__dirname + '/public'),
+    new ExtractTextWebpackPlugin('css/main.css'),
+    new HtmlWebpackPlugin({
+      title: 'Simple app build with redux-minimal',
+      template: './src/index.ejs',
+      favicon: './media/favicon.ico',
     }),
   ],
 };

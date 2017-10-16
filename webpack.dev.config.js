@@ -1,18 +1,41 @@
-var webpack = require("webpack");
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-module.exports = require('./webpack.config.js');    // inherit from the main config file
+const webpack = require("webpack");
 
-// disable the hot reload
-module.exports.entry = [
-  'babel-polyfill',
-  __dirname + '/' + module.exports.app_root + '/index.js'
-];
+function modifyBabelLoader(loader) {
+  if (loader.loader === 'babel-loader') {
+    loader.options = {
+      babelrc: false,
+      presets: [
+        [ "es2015", { modules: false } ],
+        "stage-0",
+        "react",
+      ],
+      plugins: [
+        "react-hot-loader/babel"
+      ],
+    };
+  }
 
-// export css to a separate file
-module.exports.module.loaders[1] = {
-  test: /\.scss$/,
-  loader: ExtractTextPlugin.extract('css!sass')
-};
-module.exports.plugins.push(
-  new ExtractTextPlugin('../css/main.css')
+  return loader;
+}
+
+module.exports = require('./webpack.config.js');
+
+module.exports.devServer.hot = true;
+
+module.exports.plugins.push(new webpack.HotModuleReplacementPlugin());
+
+module.exports.entry.unshift(
+  'react-hot-loader/patch',
+  'webpack/hot/only-dev-server',
+  'webpack-dev-server/client?http://0.0.0.0:8080',
 );
+
+module.exports.module.loaders = module.exports.module.loaders.map(function cb(value) {
+  if (value.use instanceof Array) {
+    value.use = value.use.map(modifyBabelLoader);
+  } else if (value.use instanceof String) {
+    value.use = modifyBabelLoader(value.use);
+  }
+
+  return value;
+});
