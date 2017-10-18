@@ -39,6 +39,7 @@ Redux-Minimal contains the minimum npm packages you need to have installed in or
 * unit tests
 * bootstrap react components
 * sass
+* source maps
 * hot loader for ease of development
 * redux tools
 * js and css bundle files built for development or production
