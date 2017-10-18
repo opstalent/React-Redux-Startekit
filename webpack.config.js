@@ -15,6 +15,12 @@ module.exports = {
     publicPath: '/',
     filename: 'js/bundle.js',
   },
+  resolve: {
+    modules: [
+      path.resolve('./src'),
+      path.resolve('./node_modules'),
+    ],
+  },
   module: {
     loaders: [
       {
