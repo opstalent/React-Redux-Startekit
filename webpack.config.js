@@ -2,13 +2,9 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 const app_root = './src';
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
-
-
 module.exports = {
   entry: [
     'babel-polyfill',
@@ -63,6 +59,6 @@ module.exports = {
       template: './src/index.ejs',
       favicon: './media/favicon.ico',
     }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
   ],
 };
