@@ -5,6 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const app_root = './src';
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+
+
 module.exports = {
   entry: [
     'babel-polyfill',
@@ -33,17 +37,17 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        }),
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader'],
-        }),
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader", options: {
+            sourceMap: true
+          }
+        }, {
+          loader: "sass-loader", options: {
+            sourceMap: true
+          }
+        }]
       },
     ],
   },
@@ -59,5 +63,6 @@ module.exports = {
       template: './src/index.ejs',
       favicon: './media/favicon.ico',
     }),
+    new BundleAnalyzerPlugin()
   ],
 };
