@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
-import Home from './components/Home';
-import store from "./store/store.js";
+import Home from 'components/Home';
+import store from "store/store";
 
 const App = () => (
   <Provider store={store}>
