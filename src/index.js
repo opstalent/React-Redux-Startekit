@@ -1,19 +1,20 @@
-import "babel-polyfill";
 import React from "react";
 import ReactDOM from "react-dom";
-import store from "./store/store.js";
-import { Provider } from 'react-redux';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Home from './components/Home';
+import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <div>
-        <Switch>
-          <Route path="/" component={Home} />
-        </Switch>
-      </div>
-    </BrowserRouter>
-  </Provider>
-  , document.getElementById('app'));
+import App from './App.js';
+
+const render = () => {
+  ReactDOM.render(
+  <AppContainer>
+    <App />
+  </AppContainer>
+    , document.getElementById('app'));
+};
+
+render();
+
+/* global module */
+if (module.hot) {
+  module.hot.accept('./App.js', render);
+}

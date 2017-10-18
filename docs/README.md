@@ -64,7 +64,7 @@ Here are the npm packages that redux-minimal installs:
 ||[`react-router-bootstrap`](https://github.com/react-bootstrap/react-router-bootstrap)|Integration between React Router and React-Bootstrap|
 |Forms|[`redux-form`](https://github.com/erikras/redux-form)|A Higher Order Component using react-redux to keep form state in a Redux store|
 |Asynchronous|[`redux-saga`](https://github.com/yelouafi/redux-saga)|Asynchronous API calls made easy with Saga|
-|Unit tests|[`mocha`](https://github.com/mochajs/mocha)|Simple javascript test framework|
+|Unit tests|[`jest`](https://github.com/facebook/jest)|Javascript test framework|
 ||[`enzyme`](https://github.com/airbnb/enzyme)|JavaScript Testing utilities for React components|
 ||[`react-addons-test-utils`](https://facebook.github.io/react/docs/test-utils.html)|Required by enzyme. Makes it easy to test React components|
 ||[`ignore-styles`](https://www.npmjs.com/package/ignore-styles)|Ignore imported style files when running in Node|
@@ -75,12 +75,14 @@ Here are the npm packages that redux-minimal installs:
 ||[`style-loader`](https://github.com/webpack/style-loader)|Webpack module that loads styles|
 ||[`css-loader`](https://github.com/webpack/css-loader)|Webpack module that loads css styles|
 ||[`sass-loader`](https://github.com/jtangelder/sass-loader)|Webpack module that loads sass styles|
+||[`ejs`](https://github.com/mde/ejs)|Embedded JavaScript templates|
 ||[`clean-webpack-plugin`](https://github.com/johnagan/clean-webpack-plugin)|Webpack module to remove previous build files|
+||[`html-webpack-plugin`](https://github.com/jantimon/html-webpack-plugin)|Simplifies creation of HTML files to serve your webpack bundles|
 |Babel|[`babel-core`](https://github.com/babel/babel/tree/master/packages/babel-core)|Compiler that helps node.js and the browser to understand the new js syntax|
 ||[`babel-runtime`](https://www.npmjs.com/package/babel-runtime)|Helps node.js to understand the new js syntax|
 ||[`babel-preset-es2015`](http://babeljs.io/docs/plugins/preset-es2015/)|Helps node.js to use [ES2015 Javascript syntax](http://www.ecma-international.org/ecma-262/6.0/ECMA-262.pdf)|
 ||[`babel-preset-react`](http://babeljs.io/docs/plugins/preset-react/)|Helps node.js to use React's [JSX syntax](https://facebook.github.io/jsx/)|
-||[`babel-preset-stage-3`](https://babeljs.io/docs/plugins/preset-stage-0/)|Helps node.js to use the spread operator|
+||[`babel-preset-stage-0`](https://babeljs.io/docs/plugins/preset-stage-0/)|Helps node.js to use the spread operator|
 ||[`babel-loader`](https://github.com/babel/babel-loader)|Helps webpack to compile the new javascript syntax|
 ||[`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)|Helps the browser to understand the new js syntax|
 ||[`whatwg-fetch`](https://github.com/github/fetch)|Helps the browser to use fetch|
