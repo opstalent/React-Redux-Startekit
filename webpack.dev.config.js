@@ -27,15 +27,19 @@ module.exports.plugins.push(new webpack.HotModuleReplacementPlugin());
 module.exports.entry.unshift(
   'react-hot-loader/patch',
   'webpack/hot/only-dev-server',
-  'webpack-dev-server/client?http://0.0.0.0:8080',
+  'webpack-dev-server/client?http://0.0.0.0:8080'
 );
 
-module.exports.module.loaders = module.exports.module.loaders.map(function cb(value) {
-  if (value.use instanceof Array) {
-    value.use = value.use.map(modifyBabelLoader);
-  } else if (value.use instanceof String) {
-    value.use = modifyBabelLoader(value.use);
-  }
 
-  return value;
-});
+(function(loaders) {
+  module.exports.module.loaders = loaders.map(function cb(value) {
+    if (value.use instanceof Array) {
+      value.use = value.use.map(modifyBabelLoader);
+    } else if (value.use instanceof String) {
+      value.use = modifyBabelLoader(value.use);
+    }
+    return value;
+  });
+})(module.exports.module.loaders);
+
+
