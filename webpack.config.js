@@ -31,7 +31,6 @@ module.exports.entry.unshift(
   'webpack-dev-server/client?http://0.0.0.0:8080'
 );
 
-
 (function(loaders) {
   module.exports.module.loaders = loaders.map(function cb(value) {
     if (value.use instanceof Array) {
@@ -42,4 +41,3 @@ module.exports.entry.unshift(
     return value;
   });
 })(module.exports.module.loaders);
-
