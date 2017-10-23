@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const app_root = './src';
+const webpack = require('webpack');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
@@ -29,7 +30,7 @@ module.exports = {
           { loader: 'babel-loader' },
           { loader: 'eslint-loader' },
         ],
-        exclude: /node_modules/,
+        exclude: /node_modules(\/webpack-dev-server)/,
       },
       {
         test: /\.scss$/,
@@ -58,7 +59,8 @@ module.exports = {
       title: 'Simple app build with redux-minimal',
       template: './src/index.ejs',
       favicon: './media/favicon.ico',
-    }),
-    new BundleAnalyzerPlugin(),
+    })
   ],
 };
+
+module.exports.plugins.push(new webpack.HotModuleReplacementPlugin());

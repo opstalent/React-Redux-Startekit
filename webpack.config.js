@@ -19,11 +19,9 @@ function modifyBabelLoader(loader) {
   return loader;
 }
 
-module.exports = require('./webpack.config.js');
+module.exports = require('./webpack.dev.config.js');
 
 module.exports.devServer.hot = true;
-
-module.exports.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 module.exports.entry.unshift(
   'react-hot-loader/patch',
