@@ -86,6 +86,7 @@ Here are the npm packages that redux-minimal installs:
 ||[`babel-preset-stage-0`](https://babeljs.io/docs/plugins/preset-stage-0/)|Helps node.js to use the spread operator|
 ||[`babel-loader`](https://github.com/babel/babel-loader)|Helps webpack to compile the new javascript syntax|
 ||[`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)|Helps the browser to understand the new js syntax|
+||[`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer)|Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap|
 
 # Change host and/or port
 
