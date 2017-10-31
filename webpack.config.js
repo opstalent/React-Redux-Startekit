@@ -2,6 +2,8 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const app_root = './src';
 
@@ -29,21 +31,21 @@ module.exports = {
           { loader: 'babel-loader' },
           { loader: 'eslint-loader' },
         ],
-        exclude: /node_modules/,
+        exclude: /node_modules(\/webpack-dev-server)/,
       },
       {
         test: /\.scss$/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        }),
-      },
-      {
-        test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader'],
-        }),
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader", options: {
+            sourceMap: true
+          }
+        }, {
+          loader: "sass-loader", options: {
+            sourceMap: true
+          }
+        }]
       },
     ],
   },
@@ -59,5 +61,8 @@ module.exports = {
       template: './src/index.ejs',
       favicon: './media/favicon.ico',
     }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    })
   ],
 };

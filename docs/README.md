@@ -39,6 +39,7 @@ Redux-Minimal contains the minimum npm packages you need to have installed in or
 * unit tests
 * bootstrap react components
 * sass
+* source maps
 * hot loader for ease of development
 * redux tools
 * js and css bundle files built for development or production
@@ -85,13 +86,11 @@ Here are the npm packages that redux-minimal installs:
 ||[`babel-preset-stage-0`](https://babeljs.io/docs/plugins/preset-stage-0/)|Helps node.js to use the spread operator|
 ||[`babel-loader`](https://github.com/babel/babel-loader)|Helps webpack to compile the new javascript syntax|
 ||[`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)|Helps the browser to understand the new js syntax|
-||[`whatwg-fetch`](https://github.com/github/fetch)|Helps the browser to use fetch|
+||[`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer)|Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap|
 
 # Change host and/or port
 
-If you don't want to use localhost on port 3000, you can change it in `package.json` and `webpack.config.js`.
+If you don't want to use localhost on port 3000, you can change it in `package.json`.
 
 # Eslint rules:
   *temporary disabled since we didn't decide what we need, to make our lives easier
-
-
