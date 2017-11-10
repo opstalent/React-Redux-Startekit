@@ -33,6 +33,7 @@ module.exports = {
         ],
         exclude: /node_modules(\/webpack-dev-server)/,
       },
+      { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
       {
         test: /\.scss$/,
         use: [{
