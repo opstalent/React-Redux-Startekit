@@ -31,7 +31,7 @@ module.exports = {
           { loader: 'babel-loader' },
           { loader: 'eslint-loader' },
         ],
-        exclude: /node_modules(\/webpack-dev-server)/,
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
