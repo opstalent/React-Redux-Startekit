@@ -7,7 +7,7 @@ import App from 'App';
 const render = () => {
   ReactDOM.render(
     <AppContainer>
-      <App />
+      <App/>
     </AppContainer>
   , document.getElementById('app'));
 };
