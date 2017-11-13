@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Signup from './auth/index.js';
+import Signup from './components/auth/Signup/Signup.js';
 
-import Home from './Home/Home.js';
-import store from "../store/store";
+import Home from './components/Home/Home.js';
+import store from "./store/store";
 
 const App = () => (
   <Provider store={store}>

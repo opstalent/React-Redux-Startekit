@@ -11,6 +11,7 @@ export default class Signup extends React.Component {
   constructor(props){
     super(props);
   }
+
   render(){
     return (
         <Grid centered style={styles.root}>
@@ -38,3 +39,6 @@ export default class Signup extends React.Component {
       )
     }
 }
+
+
+//this component will be replaced with redux-form
