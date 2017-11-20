@@ -43,6 +43,7 @@ Redux-Minimal contains the minimum npm packages you need to have installed in or
 * hot loader for ease of development
 * redux tools
 * js and css bundle files built for development or production
+* material-ui
 
 The code and implementation are minimal, which lets you focus on the real app, not the webpack, babel, gulp etc boilerplate files, which honestly you shouldn't even bother with.
 
@@ -87,6 +88,7 @@ Here are the npm packages that redux-minimal installs:
 ||[`babel-loader`](https://github.com/babel/babel-loader)|Helps webpack to compile the new javascript syntax|
 ||[`babel-polyfill`](https://babeljs.io/docs/usage/polyfill/)|Helps the browser to understand the new js syntax|
 ||[`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer)|Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap|
+||[`material-ui`](https://www.npmjs.com/package/material-ui)|Material-UI is a set of React components that implement Google's Material Design specification|
 
 # Change host and/or port
 
